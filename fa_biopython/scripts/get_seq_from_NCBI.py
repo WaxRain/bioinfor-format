@@ -14,7 +14,7 @@ def get_fasta(acc, desc=None, output=None):
 
 def get_genbank(acc, output=None):
     handle = Entrez.efetch(db="nucleotide", id=acc, rettype="gb", retmode='text')
-    fw = open(output or '%s.fa' % acc, 'w')
+    fw = open(output or '%s.gb' % acc, 'w')
     fw.write(handle.read())
     fw.close()
     handle.close()
